@@ -39,13 +39,18 @@
                 this.fetchWeather(document.querySelector(".search-bar").value);
             };
 
-    document.querySelector(".search-bar").addEventListener("keyup",function(event) {
+            document.querySelector(".search-bar").addEventListener("keyup",function(event) {
 
-        if (event.key == "Enter") {
+                if (event.key == "Enter") {
 
-            search()
-        }
-    });
+                    search()
+                }
+            });
+
+            document.querySelector("button").addEventListener("click",function() {
+
+                search();
+            });
 
 
 fetchWeather("Bangladesh");
