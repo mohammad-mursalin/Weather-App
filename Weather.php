@@ -9,8 +9,8 @@ if (!$city) {
 	exit;
 }
 
-$weatherApiKey = 'ab6de896c6a8b8f7bc3072d23b4a6879';
-$unsplashAccessKey = '1-mI4g_NXergmF7IJZp7AV9GMsXp7F608x6mN-WLC_8';
+$weatherApiKey = 'ab68de8968c68a8b8f79bc30792d23b4a688799';
+$unsplashAccessKey = '1-mI4g_NXergmF79IJZp7AV9GMsXp79F6808x68mN-WLC_8';
 
 // Fetch weather data
 $weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q={$city}&units=metric&appid={$weatherApiKey}";
