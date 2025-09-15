@@ -1,19 +1,16 @@
-
-
-    async function fetchWeather(city) {
-        const response = await fetch(`http://localhost:8080/Weather.php?city=${encodeURIComponent(city)}`);
-        if (!response.ok) {
-            alert("Invalid city name !!!\nNo weather found...");
-            throw new Error("No weather found.");
-        }
-        const result = await response.json();
-        if (result.weather && result.weather.cod === 200) {
-            displayWeather(result.weather, result.image_response);
-        } else {
-            alert("Invalid city name !!!\nNo weather found...");
-        }
+async function fetchWeather(city) {
+    const response = await fetch(`http://localhost:8080/Weather.php?city=${encodeURIComponent(city)}`);
+    if (!response.ok) {
+        alert("Invalid city name !!!\nNo weather found...");
+        throw new Error("No weather found.");
     }
-
+    const result = await response.json();
+    if (result.weather && result.weather.cod === 200) {
+        displayWeather(result.weather, result.image_response);
+    } else {
+        alert("Invalid city name !!!\nNo weather found...");
+    }
+}
 
 function displayWeather(data, image_response) {
     const { name } = data;
@@ -40,22 +37,21 @@ function displayWeather(data, image_response) {
     }
 }
 
-            function search() {
-                fetchWeather(document.querySelector(".search-bar").value);
-            }
+function search() {
+    fetchWeather(document.querySelector(".search-bar").value);
+}
 
-            document.querySelector(".search-bar").addEventListener("keyup",function(event) {
+document.querySelector(".search-bar").addEventListener("keyup",function(event) {
 
-                if (event.key == "Enter") {
+    if (event.key == "Enter") {
 
-                    search()
-                }
-            });
+        search()
+    }
+});
 
-            document.querySelector("button").addEventListener("click",function() {
+document.querySelector("button").addEventListener("click",function() {
 
-                search();
-            });
-
+    search();
+});
 
 fetchWeather("Bangladesh");
